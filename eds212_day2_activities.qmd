@@ -2,12 +2,34 @@
 title: "EDS 212 tasks day 2"
 format: html
 editor: visual
+editor_options: 
+  chunk_output_type: console
 ---
 
-```{r}
+```{r, message= FALSE}
+#attach libraries
 library(tidyverse)
 library(palmerpenguins)
 
+```
 
+## Derivative practice
+
+Problem 1
+```{r}
+expr1 <- expression(x^2)
+deriv1 <- D(expr1, "x")
+x <- 3
+eval(deriv1)
+
+```
+
+Problem 2
+
+```{r}
+expr2 <- expression(2 * (3*a + 2)^4 - 5)
+deriv2 <- D(expr2, "a")
+a <- 1.2
+eval(deriv2)
 ```
 
