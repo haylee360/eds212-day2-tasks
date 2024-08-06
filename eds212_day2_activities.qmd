@@ -55,6 +55,7 @@ ggplot(penguins, aes(x = bill_length_mm,
 ggplot(penguins, aes(x = species, 
                      y = flipper_length_mm)) +
   geom_jitter(aes(color=species)) +
+  scale_color_manual(values = c("cyan", "purple", "orange")) +
   labs(title = "Penguin flipper length by species", 
        x = "Species", 
        y = "Penguin flipper length in mm")
