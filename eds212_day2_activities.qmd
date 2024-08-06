@@ -10,7 +10,6 @@ editor_options:
 #attach libraries
 library(tidyverse)
 library(palmerpenguins)
-
 ```
 
 ## Derivative practice
@@ -21,15 +20,43 @@ expr1 <- expression(x^2)
 deriv1 <- D(expr1, "x")
 x <- 3
 eval(deriv1)
-
 ```
 
 Problem 2
-
 ```{r}
 expr2 <- expression(2 * (3*a + 2)^4 - 5)
 deriv2 <- D(expr2, "a")
 a <- 1.2
 eval(deriv2)
+```
+
+## Making another penguin plot
+
+```{r, warning=F}
+#getting familiar with the data frame
+head(penguins)
+view(penguins)
+glimpse(penguins)
+
+#graphing bill length vs. bill depth ----
+ggplot(penguins, aes(x = bill_length_mm, 
+                     y = bill_depth_mm)) +
+  geom_point(aes(color=species)) +
+  labs(title = "Penguin bill length versus bill depth", 
+       x = "Bill length in mm", 
+       y = "Bill depth in mm")
+
+```
+
+## Jitter plot
+
+```{r, warning=F}
+#flipper length by species ----
+ggplot(penguins, aes(x = species, 
+                     y = flipper_length_mm)) +
+  geom_jitter(aes(color=species)) +
+  labs(title = "Penguin flipper length by species", 
+       x = "Species", 
+       y = "Penguin flipper length in mm")
 ```
 
