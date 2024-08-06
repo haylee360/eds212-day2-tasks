@@ -1,0 +1,13 @@
+---
+title: "EDS 212 tasks day 2"
+format: html
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+
+
+```
+
